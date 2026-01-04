@@ -9,7 +9,13 @@
     <url>http://wiki.objectstyle.org/confluence/display/WONDER/Home</url>
 
     <modules>
-        <module>Frameworks</module>
+		<module>Ajax</module>
+		<module>BusinessLogic</module>
+		<module>Core</module>
+		<module>EOAdaptors</module>
+		<module>EOF</module>
+		<module>Misc</module>
+		<module>PlugIns</module>
     </modules>
 
     <properties>
