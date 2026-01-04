@@ -10,11 +10,20 @@
 
     <modules>
 		<module>Ajax</module>
-		<module>BusinessLogic</module>
-		<module>Core</module>
-		<module>EOF</module>
-		<module>Misc</module>
-		<module>PlugIns</module>
+		<module>ERCoolComponents</module>
+		<module>ERAttachment</module>
+		<module>ERExtensions</module>
+		<module>ERJavaMail</module>
+		<module>ERPrototypes</module>
+		<module>JavaWOExtensions</module>
+		<module>WOOgnl</module>
+		<module>ERAttributeExtension</module>
+		<module>ERJGroupsSynchronizer</module>
+		<module>ERRest</module>
+		<module>ERPDFGeneration</module>
+		<module>WOLips</module>
+		<module>H2PlugIn</module>
+		<module>PostgresqlPlugIn</module>
     </modules>
 
     <properties>
