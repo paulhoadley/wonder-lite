@@ -10,10 +10,7 @@
 	<packaging>pom</packaging>
 	<name>Plugins Frameworks</name>
 	<modules>
-		<module>ERMicrosoftPlugIn</module>
-		<module>EROraclePlugIn</module>
 		<module>H2PlugIn</module>
-		<module>MySQLPlugIn</module>
 		<module>PostgresqlPlugIn</module>
 	</modules>
 </project>

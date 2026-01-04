@@ -11,6 +11,5 @@
 	<name>Business Logic Frameworks</name>
 	<modules>
 		<module>ERAttachment</module>
-		<module>ERTaggable</module>
 	</modules>
 </project>

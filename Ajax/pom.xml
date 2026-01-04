@@ -12,6 +12,5 @@
 	<modules>
 		<module>Ajax</module>
 		<module>ERCoolComponents</module>
-		<module>ERPrototaculous</module>
 	</modules>
 </project>

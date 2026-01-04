@@ -10,11 +10,7 @@
 	<packaging>pom</packaging>
 	<name>Misc Frameworks</name>
 	<modules>
-		<module>ERCayenne</module>
 		<module>ERPDFGeneration</module>
-		<module>ERPersistentSessionStorage</module>
-		<module>ERProfiling</module>
-		<module>JavaMonitorFramework</module>
 		<module>WOLips</module>
 	</modules>
 </project>
