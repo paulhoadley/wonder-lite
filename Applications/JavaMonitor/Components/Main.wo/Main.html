@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+<webobject name=LoginSucceeded>
+<head>
+	<title>Monitor for WebObjects 5.4</title>
+	<webobject name=Refresh></webobject>
+</head>
+</webobject>
+
+<webobject name=LoginRequired>
+<head>
+	<title>Monitor for WebObjects 5.4</title>
+	<webobject name = "ERXStyleSheet"/>
+</head>
+<body id ="LoginPage" onload="document.getElementById('password').focus()">
+	<h1>JavaMonitor for WebObjects</h1>
+	<webobject name = "HasLoginError">
+		<p class="Box ErrorBox LoginErrorBox"><webobject name="ErrorMsg" /></p>
+	</webobject>
+	<div class="Box LoginBox">
+		<webobject name="LoginForm">
+			<h4>A password is required to access this application</h4>
+	      	<p><label for="password">Password:</label><webobject name = "PasswordField"/></p>
+        	<p class="button_bar"><webobject name="SubmitPasswordButton"/></p>
+		</webobject> <!-- LoginForm -->
+	</div>
+
+</body>
+</webobject> <!-- LoginRequired -->
+</html>

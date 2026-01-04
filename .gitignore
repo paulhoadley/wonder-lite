@@ -1,0 +1,7 @@
+target
+bin
+*.xcodeproj
+*.pbxproj
+ant.*
+dist
+.DS_Store

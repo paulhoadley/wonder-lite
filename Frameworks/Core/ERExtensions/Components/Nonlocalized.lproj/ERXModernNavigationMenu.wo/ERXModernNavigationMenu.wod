@@ -1,0 +1,9 @@
+RootNavigationMenuItem: ERXModernNavigationMenuItem {
+	navigationItem = rootNode;
+	navigationContext = navigationContext;
+}
+
+HasRootNavigationMenuItem: ERXNonNullConditional {
+	condition = rootNode;
+}
+Else : ERXElse {}

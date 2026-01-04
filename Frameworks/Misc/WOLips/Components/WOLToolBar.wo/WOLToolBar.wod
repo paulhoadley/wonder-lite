@@ -1,0 +1,24 @@
+IsApplicationDevelopmentMode : WOConditional {
+  condition = application.developmentMode;
+}
+
+SimpleName :WOString {
+	value = pageSimpleName;
+}
+
+
+WOLComponentLink : WOLComponentLink {
+  component = pageClassName;
+}
+
+WOLClickToOpen : WOLClickToOpen {
+}
+
+ComponentContent : WOComponentContent {
+}
+
+ToolBar : WOGenericContainer {
+  elementName = "span";
+  id = "_wolToolBar";
+  style = style;
+}

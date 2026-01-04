@@ -1,0 +1,16 @@
+
+
+String:ERXFixedLengthString {
+	value=objectKeyPathValue;
+	length = ^length;
+	suffixWhenTrimmed = "...";
+	escapeHTML = ^escapeHTML;
+}
+
+
+Hyperlink:WOHyperlink {
+	href = "#";
+	title = objectKeyPathValue;
+	disabled = 1;
+}
+

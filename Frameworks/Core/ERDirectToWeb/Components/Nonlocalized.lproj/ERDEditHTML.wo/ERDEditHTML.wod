@@ -1,0 +1,12 @@
+Text : WOText {
+	rows = ^rows;
+	cols = ^length;
+	value = objectKeyPathValue;
+	class = textAreaClass;
+}
+
+InitScript : ERXJavaScript {}
+
+InitScriptString : WOString {
+	value = initScript;
+}

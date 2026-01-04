@@ -1,0 +1,5 @@
+Selector: ERXBooleanSelector {
+	selection = objectPropertyValue;
+	yesString = "Allow";
+	noString = "Restrict";
+}

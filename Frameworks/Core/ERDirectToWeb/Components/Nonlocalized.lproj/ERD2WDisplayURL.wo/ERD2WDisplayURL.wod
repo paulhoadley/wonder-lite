@@ -1,0 +1,9 @@
+HasLink : ERXNonNullConditional {
+	condition = href;
+}
+
+Link: WOHyperlink {
+	href = href;
+	string = string;
+	target = target;
+}
