@@ -1,3 +1,5 @@
+![](https://github.com/paulhoadley/wonder-lite/workflows/build/badge.svg)
+
 Wonder Lite
 ===========
 
@@ -20,4 +22,13 @@ repository.
 FAQs
 ----
 * _My favourite framework/feature is missing—where did it go?_ It was
-  deleted. It probably won't be coming back.
+  deleted. It won't be coming back.
+* _Why isn't this project a fork of Project Wonder?_ Wonder has a
+  long, complicated history, stretching back at least to 2001, none of
+  which is particularly relevant to this project. That history is
+  always available in Wonder's repoitory.
+* _Then why is the initial clone almost 200M?_ Although the full
+  history isn't relevant, I thought it was important to show how we
+  got here. So the initial commit is basically Wonder's `master`
+  branch as it appeared on 4 January 2026, followed by a number of
+  extensive deletes and some reorganisation.
