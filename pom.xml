@@ -175,12 +175,12 @@
                 <version>${webobjects.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.core</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>JavaWOExtensions</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.core</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>ERExtensions</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -190,37 +190,37 @@
                 <version>1.1</version>
             </dependency>
             <dependency>
-                <groupId>wonder.core</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>ERPrototypes</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.core</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>ERJavaMail</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.core</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>WOOgnl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.businesslogic</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>ERAttachment</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.ajax</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>Ajax</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.eof</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>ERRest</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>wonder.ajax</groupId>
+                <groupId>net.logicsquad.wonder</groupId>
                 <artifactId>ERCoolComponents</artifactId>
                 <version>${project.version}</version>
             </dependency>
