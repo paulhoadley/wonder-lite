@@ -1,5 +1,0 @@
-Tags : WOSwitchComponent {
-	WOComponentName = "ERAjaxTagField";
-	taggable = taggable;
-	id = d2wContext.id;
-}
