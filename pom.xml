@@ -9,11 +9,7 @@
     <url>http://wiki.objectstyle.org/confluence/display/WONDER/Home</url>
 
     <modules>
-        <module>Applications</module>
-        <module>Examples</module>
         <module>Frameworks</module>
-        <module>Tests</module>
-        <module>Utilities</module>
     </modules>
 
     <properties>
