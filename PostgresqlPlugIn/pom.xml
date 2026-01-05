@@ -12,7 +12,8 @@
     <dependency>
       <groupId>com.webobjects</groupId>
       <artifactId>JavaJDBCAdaptor</artifactId>
-      </dependency>		<dependency>
+    </dependency>
+    <dependency>
       <groupId>com.webobjects</groupId>
       <artifactId>JavaEOAccess</artifactId>
     </dependency>
@@ -29,7 +30,4 @@
       <artifactId>commons-lang3</artifactId>
     </dependency>
   </dependencies>
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
 </project>

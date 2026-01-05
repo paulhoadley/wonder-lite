@@ -12,7 +12,8 @@
     <dependency>
       <groupId>net.logicsquad.wonder</groupId>
       <artifactId>ERExtensions</artifactId>
-      </dependency>		<dependency>
+    </dependency>
+    <dependency>
       <groupId>com.webobjects</groupId>
       <artifactId>JavaWebObjects</artifactId>
     </dependency>
@@ -25,7 +26,4 @@
       <artifactId>commons-logging</artifactId>
     </dependency>
   </dependencies>
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
 </project>

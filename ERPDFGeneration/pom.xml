@@ -13,7 +13,8 @@
   <dependencies>
     <dependency>
       <groupId>net.logicsquad.wonder</groupId>
-    <artifactId>ERExtensions</artifactId>		</dependency>
+      <artifactId>ERExtensions</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.webobjects</groupId>
       <artifactId>JavaFoundation</artifactId>
@@ -54,8 +55,4 @@
       <artifactId>fop</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
 </project>

@@ -8,12 +8,10 @@
   <artifactId>JavaWOExtensions</artifactId>
   <name>JavaWOExtensions Framework</name>
   <packaging>woframework</packaging>
-  <build>
-    <sourceDirectory>${basedir}/Sources</sourceDirectory>
-  </build>
   <dependencies>
-    <dependency>			<groupId>com.webobjects</groupId>
-    <artifactId>JavaFoundation</artifactId>
+    <dependency>
+      <groupId>com.webobjects</groupId>
+      <artifactId>JavaFoundation</artifactId>
     </dependency>
     <dependency>
       <groupId>com.webobjects</groupId>

@@ -10,14 +10,14 @@
   <packaging>woframework</packaging>
 
   <build>
-    <sourceDirectory>Sources</sourceDirectory>
     <plugins>
-      <plugin>				<groupId>org.wocommunity</groupId>
-      <artifactId>wolifecycle-maven-plugin</artifactId>
-      <extensions>true</extensions>
-      <configuration>
-	<skipAppleProvidedFrameworks>true</skipAppleProvidedFrameworks>
-      </configuration>
+      <plugin>
+	<groupId>org.wocommunity</groupId>
+	<artifactId>wolifecycle-maven-plugin</artifactId>
+	<extensions>true</extensions>
+	<configuration>
+	  <skipAppleProvidedFrameworks>true</skipAppleProvidedFrameworks>
+	</configuration>
       </plugin>
     </plugins>
   </build>
@@ -32,7 +32,8 @@
       <artifactId>JavaFoundation</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.webobjects</groupId>			<artifactId>JavaXML</artifactId>
+      <groupId>com.webobjects</groupId>
+      <artifactId>JavaXML</artifactId>
     </dependency>
     <dependency>
       <groupId>com.webobjects</groupId>

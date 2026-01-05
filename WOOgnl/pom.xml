@@ -33,36 +33,4 @@
       <artifactId>slf4j-api</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <sourceDirectory>${basedir}/Sources</sourceDirectory>
-    <plugins>
-      <plugin>
-        <groupId>org.wocommunity</groupId>
-        <artifactId>wolifecycle-maven-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <skipAppleProvidedFrameworks>true</skipAppleProvidedFrameworks>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>${basedir}/Sources_WO54</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>

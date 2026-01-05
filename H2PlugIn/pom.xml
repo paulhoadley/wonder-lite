@@ -12,7 +12,8 @@
     <dependency>
       <groupId>com.webobjects</groupId>
       <artifactId>JavaJDBCAdaptor</artifactId>
-      </dependency>		<dependency>
+    </dependency>
+    <dependency>
       <groupId>com.webobjects</groupId>
       <artifactId>JavaEOAccess</artifactId>
     </dependency>
@@ -26,7 +27,4 @@
       <version>1.4.195</version>
     </dependency>
   </dependencies>
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
 </project>

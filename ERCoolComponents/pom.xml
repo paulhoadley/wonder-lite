@@ -10,9 +10,6 @@
   <name>ERCoolComponents Framework</name>
   <packaging>woframework</packaging>
 
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
   <dependencies>
     <dependency>
       <groupId>net.logicsquad.wonder</groupId>

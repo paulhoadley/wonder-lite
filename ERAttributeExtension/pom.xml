@@ -20,8 +20,9 @@
       <groupId>com.webobjects</groupId>
       <artifactId>JavaJDBCAdaptor</artifactId>
     </dependency>
-    <dependency>			<groupId>com.webobjects</groupId>
-    <artifactId>JavaFoundation</artifactId>
+    <dependency>
+      <groupId>com.webobjects</groupId>
+      <artifactId>JavaFoundation</artifactId>
     </dependency>
     <dependency>
       <groupId>com.webobjects</groupId>
@@ -32,7 +33,4 @@
       <artifactId>reload4j</artifactId>
     </dependency>
   </dependencies>
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
 </project>

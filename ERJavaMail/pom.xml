@@ -9,10 +9,8 @@
   <name>ERJavaMail Framework</name>
   <packaging>woframework</packaging>
 
-  <build>
-    <sourceDirectory>Sources</sourceDirectory>
-  </build>
-  <dependencies>		<dependency>
+  <dependencies>
+    <dependency>
     <groupId>net.logicsquad.wonder</groupId>
     <artifactId>ERExtensions</artifactId>
   </dependency>
