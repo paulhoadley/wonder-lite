@@ -43,11 +43,5 @@
     <artifactId>dsn</artifactId>
     <optional>true</optional>
   </dependency>
-  <dependency>
-    <groupId>wonder.javamail</groupId>
-    <artifactId>mockmail</artifactId>
-    <version>1.0</version>
-    <scope>test</scope>
-  </dependency>
   </dependencies>
 </project>
