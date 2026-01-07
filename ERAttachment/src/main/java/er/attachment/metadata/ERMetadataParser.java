@@ -44,16 +44,6 @@ public class ERMetadataParser {
           log.warn("Cannot use ImageIOMetadataParser: {}", ERXExceptionUtilities.toParagraph(t));
         }
 
-        // Try ImageMagick ...
-        if (metadataParser == null) {
-          try {
-            metadataParser = ImageMagickCommandlineMetadataParser.imageMagickMetadataParser();
-          }
-          catch (Throwable t) {
-            log.warn("Cannot use ImageMagickCommandlineMetadataParser: {}", ERXExceptionUtilities.toParagraph(t));
-          }
-        }
-
         // ... and the fallback to Java2D
         if (metadataParser == null) {
           metadataParser = new JAIMetadataParser();
