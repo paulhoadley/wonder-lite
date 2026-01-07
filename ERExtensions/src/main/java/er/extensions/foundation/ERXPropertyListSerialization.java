@@ -37,9 +37,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -5784,16 +5787,17 @@ public class ERXPropertyListSerialization {
         if (doc == null) {
             return null;
         }
-
-        StringWriter stringOut = new StringWriter();
-        try {
-            OutputFormat format = new OutputFormat(doc); // Serialize DOM
-            XMLSerializer serial = new XMLSerializer(stringOut, format);
-            serial.asDOMSerializer(); // As a DOM serializer
-            serial.serialize(doc.getDocumentElement());
-        } catch (IOException e) {
-            throw new NSForwardException(e);
-        }
-        return stringOut.toString();
+		try {
+			Transformer transformer = TransformerFactory.newInstance().newTransformer();
+			doc.setXmlStandalone(true);
+			transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "-//Apple Computer//DTD PLIST 1.0//EN");
+			transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "http://www.apple.com/DTDs/PropertyList-1.0.dtd");
+			StreamResult result = new StreamResult(new StringWriter());
+			DOMSource source = new DOMSource(doc);
+			transformer.transform(source, result);
+			return result.getWriter().toString();
+		} catch (Exception e) {
+			throw new NSForwardException(e);
+		}
     }
 }

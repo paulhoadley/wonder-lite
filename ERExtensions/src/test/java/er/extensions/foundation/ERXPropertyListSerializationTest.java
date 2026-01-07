@@ -38,7 +38,7 @@ public class ERXPropertyListSerializationTest {
 		Document document = createDocumentFromResource(SAMPLE_XML_PLIST);
 		String result = ERXPropertyListSerialization.convertDOMToString(document);
 		String expected = stringForResource(EXPECTED_XML_PLIST);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	protected static Document createDocumentFromResource(String resource) {
