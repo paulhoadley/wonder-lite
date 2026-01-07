@@ -5780,7 +5780,7 @@ public class ERXPropertyListSerialization {
 		return (result instanceof NSDictionary ? (NSDictionary<K, V>) result : NSDictionary.<K, V> emptyDictionary());
 	}
 
-	private static String convertDOMToString(org.w3c.dom.Document doc) {
+	static String convertDOMToString(org.w3c.dom.Document doc) {
         if (doc == null) {
             return null;
         }
