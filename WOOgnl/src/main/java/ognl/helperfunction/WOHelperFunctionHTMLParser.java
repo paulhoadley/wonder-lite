@@ -4,14 +4,14 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.webobjects.foundation.NSMutableDictionary;
 import com.webobjects.foundation._NSStringUtilities;
 
 public class WOHelperFunctionHTMLParser {
-	public static Logger log = Logger.getLogger(WOHelperFunctionHTMLParser.class);
+	public static Logger LOG = LoggerFactory.getLogger(WOHelperFunctionHTMLParser.class);
 
 	private WOHelperFunctionParser _parserDelegate;
 	private String _unparsedTemplate;
@@ -31,10 +31,6 @@ public class WOHelperFunctionHTMLParser {
 
 	private static boolean _parseStandardTags = false;
 	private NSMutableDictionary _stackDict;
-
-	static {
-		WOHelperFunctionHTMLParser.log.setLevel(Level.WARN);
-	}
 
 	public WOHelperFunctionHTMLParser(WOHelperFunctionParser parserDelegate, String unparsedTemplate) {
 		_parserDelegate = parserDelegate;
@@ -153,7 +149,7 @@ public class WOHelperFunctionHTMLParser {
 			while (true);
 		}
 		catch (NoSuchElementException e) {
-			log.error(e);
+			LOG.error("NoSuchElementException:", e);
 			didParseText();
 			return;
 		}
@@ -192,8 +188,8 @@ public class WOHelperFunctionHTMLParser {
 			if ((token.indexOf("\"$") != -1 || token.indexOf("\"~") != -1)  && token.startsWith("<")) {
 				// we assume a dynamic tag
 				token = token.replaceAll(tokenParts[0], "<wo:" + WO_REPLACEMENT_MARKER + tokenPart);
-				if (log.isDebugEnabled())
-					log.debug("Rewritten <" + tokenPart + " ...> tag to <wo:" + tokenPart + " ...>");
+				if (LOG.isDebugEnabled())
+					LOG.debug("Rewritten <" + tokenPart + " ...> tag to <wo:" + tokenPart + " ...>");
 
 				if (!token.endsWith("/")) {
 					// no need to keep information for self closing tags
@@ -225,8 +221,8 @@ public class WOHelperFunctionHTMLParser {
 				if (stack != null && !stack.empty()) {
 					String stackContent = (String) stack.pop();
 					if (stackContent.equals(WO_REPLACEMENT_MARKER)) {
-						if (log.isDebugEnabled())
-							log.debug("Replaced end tag for '" + tokenParts[0].substring(2) + "' with 'wo' endtag");
+						if (LOG.isDebugEnabled())
+							LOG.debug("Replaced end tag for '" + tokenParts[0].substring(2) + "' with 'wo' endtag");
 						token = "</wo";
 					}
 				}
@@ -254,8 +250,8 @@ public class WOHelperFunctionHTMLParser {
 
 	private void didParseText() {
 		if (_contentText != null) {
-			if (log.isDebugEnabled()) {
-				log.debug("Parsed Text (" + _contentText.length() + ") : " + _contentText);
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Parsed Text (" + _contentText.length() + ") : " + _contentText);
 			}
 			if (_contentText.length() > 0) {
 				_parserDelegate.didParseText(_NSStringUtilities.stringFromBuffer(_contentText), this);
@@ -266,8 +262,8 @@ public class WOHelperFunctionHTMLParser {
 
 	private void didParseOpeningWebObjectTag() throws WOHelperFunctionHTMLFormatException {
 		if (_contentText != null) {
-			if (log.isDebugEnabled()) {
-				log.debug("Parsed Opening WebObject (" + _contentText.length() + ") : " + _contentText);
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Parsed Opening WebObject (" + _contentText.length() + ") : " + _contentText);
 			}
 			if (_contentText.length() > 0) {
 				_parserDelegate.didParseOpeningWebObjectTag(_NSStringUtilities.stringFromBuffer(_contentText), this);
@@ -278,8 +274,8 @@ public class WOHelperFunctionHTMLParser {
 
 	private void didParseClosingWebObjectTag() throws WOHelperFunctionDeclarationFormatException, WOHelperFunctionHTMLFormatException, ClassNotFoundException, ClassNotFoundException {
 		if (_contentText != null) {
-			if (log.isDebugEnabled()) {
-				log.debug("Parsed Closing WebObject (" + _contentText.length() + ") : " + _contentText);
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Parsed Closing WebObject (" + _contentText.length() + ") : " + _contentText);
 			}
 			if (_contentText.length() > 0) {
 				_parserDelegate.didParseClosingWebObjectTag(_NSStringUtilities.stringFromBuffer(_contentText), this);
@@ -290,8 +286,8 @@ public class WOHelperFunctionHTMLParser {
 
 	private void didParseComment() {
 		if (_contentText != null) {
-			if (log.isDebugEnabled()) {
-				log.debug("Parsed Comment (" + _contentText.length() + ") : " + _contentText);
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Parsed Comment (" + _contentText.length() + ") : " + _contentText);
 			}
 			if (_contentText.length() > 0) {
 				_parserDelegate.didParseComment(_NSStringUtilities.stringFromBuffer(_contentText), this);
