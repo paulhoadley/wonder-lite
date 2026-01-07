@@ -3,13 +3,9 @@ package er.extensions.foundation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.stream.Collectors;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -33,15 +29,17 @@ public class ERXPropertyListSerializationTest {
 		return;
 	}
 
+	// This really only tests round-tripping from XML-format property list and back
 	@Test
 	public void convertDOMToStringReturnsExpectedResult() {
-		Document document = createDocumentFromResource(SAMPLE_XML_PLIST);
+		Document document = documentFromResource(SAMPLE_XML_PLIST);
 		String result = ERXPropertyListSerialization.convertDOMToString(document);
-		String expected = stringForResource(EXPECTED_XML_PLIST);
+		String expected = stringFromResource(EXPECTED_XML_PLIST);
 		assertEquals(expected, result);
+		return;
 	}
 
-	protected static Document createDocumentFromResource(String resource) {
+	private static Document documentFromResource(String resource) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setNamespaceAware(true);
 		try (InputStream is = ERXPropertyListSerialization.class.getResourceAsStream(resource)) {
@@ -52,9 +50,11 @@ public class ERXPropertyListSerializationTest {
 		}
 	}
 
-	public static String stringForResource(String resource) {
-		return new BufferedReader(new InputStreamReader(ERXPropertyListSerialization.class.getResourceAsStream(resource), StandardCharsets.UTF_8))
-                .lines()
-                .collect(Collectors.joining("\n"));
+	public static String stringFromResource(String resource) {
+		try (InputStream is = ERXPropertyListSerialization.class.getResourceAsStream(resource)) {
+			return new String(is.readAllBytes(), StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			return null;
+		}
 	}
 }

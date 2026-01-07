@@ -3,12 +3,12 @@
 package er.extensions.foundation;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringReader;
-import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -37,16 +37,15 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.DOMConfiguration;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSOutput;
+import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -5784,20 +5783,28 @@ public class ERXPropertyListSerialization {
 	}
 
 	static String convertDOMToString(org.w3c.dom.Document doc) {
-        if (doc == null) {
-            return null;
-        }
+		if (doc == null) {
+			return null;
+		}
 		try {
-			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			doc.setXmlStandalone(true);
-			transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "-//Apple Computer//DTD PLIST 1.0//EN");
-			transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "http://www.apple.com/DTDs/PropertyList-1.0.dtd");
-			StreamResult result = new StreamResult(new StringWriter());
-			DOMSource source = new DOMSource(doc);
-			transformer.transform(source, result);
-			return result.getWriter().toString();
+			DOMImplementationLS domImplLS = (DOMImplementationLS) doc.getImplementation();
+			LSSerializer serializer = domImplLS.createLSSerializer();
+			LSOutput lsOutput = domImplLS.createLSOutput();
+			DOMConfiguration domConfig = serializer.getDomConfig();
+			if (domConfig.canSetParameter("format-pretty-print", Boolean.TRUE)) {
+				domConfig.setParameter("format-pretty-print", Boolean.TRUE);
+			}
+			if (domConfig.canSetParameter("jdk.xml.isStandalone", Boolean.TRUE)) {
+				domConfig.setParameter("jdk.xml.isStandalone", Boolean.TRUE);
+			}
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			lsOutput.setByteStream(baos);
+			serializer.write(doc, lsOutput);
+			return baos.toString(StandardCharsets.UTF_8);
+
 		} catch (Exception e) {
 			throw new NSForwardException(e);
 		}
-    }
+	}
 }
