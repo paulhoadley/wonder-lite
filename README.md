@@ -34,6 +34,17 @@ commit
 [`da13591`](https://github.com/wocommunity/wonder/commit/da1359157a3433fabd64e739af64b3904e4547b9),
 which is Wonder 7.4 plus 15 small commits.
 
+Licence
+-------
+Wonder Lite is derived from Project Wonder and keeps its licence, the
+NetStruxr Public Software License, a BSD-style licence: see
+[LICENSE](LICENSE). ERJavaMail began as Camille Troillard's Odaiko
+MailDelivery framework, whose README says it's under the GNU Lesser
+General Public License: see
+[ERJavaMail/src/doc/README.txt](ERJavaMail/src/doc/README.txt).
+Bundled third-party files, such as the JavaScript libraries in Ajax,
+carry their own licences.
+
 FAQs
 ----
 * _My favourite framework/feature is missing—where did it go?_ It was
