@@ -40,8 +40,7 @@ Wonder Lite is derived from Project Wonder and keeps its licence, the
 NetStruxr Public Software License, a BSD-style licence: see
 [LICENSE](LICENSE). ERJavaMail began as Camille Troillard's Odaiko
 MailDelivery framework, whose README says it's under the GNU Lesser
-General Public License: see
-[ERJavaMail/src/doc/README.txt](ERJavaMail/src/doc/README.txt).
+General Public License: see [ERJavaMail/README.md](ERJavaMail/README.md).
 Bundled third-party files, such as the JavaScript libraries in Ajax,
 carry their own licences.
 
