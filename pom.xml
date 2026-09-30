@@ -164,11 +164,6 @@
         <version>${webobjects.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.webobjects</groupId>
-        <artifactId>JavaXML</artifactId>
-        <version>${webobjects.version}</version>
-      </dependency>
-      <dependency>
         <groupId>net.logicsquad.wonder</groupId>
         <artifactId>JavaWOExtensions</artifactId>
         <version>${project.version}</version>
@@ -224,11 +219,6 @@
         <version>1.6.0</version>
       </dependency>
       <dependency>
-        <groupId>com.sun.mail</groupId>
-        <artifactId>dsn</artifactId>
-        <version>1.6.0</version>
-      </dependency>
-      <dependency>
         <groupId>ch.qos.reload4j</groupId>
         <artifactId>reload4j</artifactId>
         <version>1.2.22</version>
@@ -263,6 +253,7 @@
         <artifactId>jgroups</artifactId>
         <version>3.6.9.Final</version>
       </dependency>
+      <!-- FOP and json-lib would otherwise bring in older versions. -->
       <dependency>
         <groupId>commons-logging</groupId>
         <artifactId>commons-logging</artifactId>
@@ -272,6 +263,13 @@
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
         <version>1.4.196</version>
+      </dependency>
+      <!-- json-lib (ERRest) depends on commons-beanutils 1.8.0, which has
+           published vulnerabilities. -->
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>1.9.4</version>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>
@@ -292,11 +290,6 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>3.8.1</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.xmlgraphics</groupId>
-        <artifactId>xmlgraphics-commons</artifactId>
-        <version>2.3</version>
       </dependency>
       <dependency>
         <groupId>org.apache.xmlgraphics</groupId>

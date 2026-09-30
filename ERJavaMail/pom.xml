@@ -24,10 +24,6 @@
   </dependency>
   <dependency>
     <groupId>com.webobjects</groupId>
-    <artifactId>JavaXML</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>com.webobjects</groupId>
     <artifactId>JavaEOControl</artifactId>
   </dependency>
   <dependency>
@@ -37,11 +33,6 @@
   <dependency>
     <groupId>com.sun.mail</groupId>
     <artifactId>javax.mail</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>com.sun.mail</groupId>
-    <artifactId>dsn</artifactId>
-    <optional>true</optional>
   </dependency>
     <dependency>
       <groupId>junit</groupId>

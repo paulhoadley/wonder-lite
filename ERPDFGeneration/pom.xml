@@ -34,17 +34,13 @@
       <version>9.1.16</version>
     </dependency>
     <dependency>
-      <groupId>org.xhtmlrenderer</groupId>
-      <artifactId>flying-saucer-swt</artifactId>
-      <version>9.1.16</version>
+      <groupId>com.github.librepdf</groupId>
+      <artifactId>openpdf</artifactId>
+      <version>1.2.3</version>
     </dependency>
     <dependency>
       <groupId>net.sourceforge.ujac</groupId>
       <artifactId>ujac</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.xmlgraphics</groupId>
-      <artifactId>xmlgraphics-commons</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>
