@@ -5,6 +5,9 @@ All notable changes to Wonder Lite are recorded here. Wonder Lite has
 its own version line (see the README), and any 0.x release may break
 compatibility with the one before it.
 
+Unreleased
+----------
+
 0.1 — 2026-10-01
 ----------------
 The first release. It sets a trustworthy baseline: the build, the
