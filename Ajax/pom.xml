@@ -3,24 +3,12 @@
   <parent>
     <groupId>net.logicsquad.wonder</groupId>
     <artifactId>wonder-lite</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1</version>
   </parent>
   <artifactId>Ajax</artifactId>
   <name>Ajax Framework</name>
   <packaging>woframework</packaging>
 
-  <build>
-    <plugins>
-      <plugin>
-	<groupId>org.wocommunity</groupId>
-	<artifactId>wolifecycle-maven-plugin</artifactId>
-	<extensions>true</extensions>
-	<configuration>
-	  <skipAppleProvidedFrameworks>true</skipAppleProvidedFrameworks>
-	</configuration>
-      </plugin>
-    </plugins>
-  </build>
 
   <dependencies>
     <dependency>

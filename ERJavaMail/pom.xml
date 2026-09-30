@@ -3,7 +3,7 @@
   <parent>
     <groupId>net.logicsquad.wonder</groupId>
     <artifactId>wonder-lite</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1</version>
   </parent>
   <artifactId>ERJavaMail</artifactId>
   <name>ERJavaMail Framework</name>
@@ -24,10 +24,6 @@
   </dependency>
   <dependency>
     <groupId>com.webobjects</groupId>
-    <artifactId>JavaXML</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>com.webobjects</groupId>
     <artifactId>JavaEOControl</artifactId>
   </dependency>
   <dependency>
@@ -38,10 +34,10 @@
     <groupId>com.sun.mail</groupId>
     <artifactId>javax.mail</artifactId>
   </dependency>
-  <dependency>
-    <groupId>com.sun.mail</groupId>
-    <artifactId>dsn</artifactId>
-    <optional>true</optional>
-  </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>

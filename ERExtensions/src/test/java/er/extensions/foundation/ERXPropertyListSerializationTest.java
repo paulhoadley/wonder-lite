@@ -13,11 +13,14 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
+import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSDictionary;
+
 /**
  * Unit tests on {@link ERXPropertyListSerialization}.
  * 
  * @author paulh
- * @since wonder-lite-1.0
+ * @since 0.1
  */
 public class ERXPropertyListSerializationTest {
 	private static final String SAMPLE_XML_PLIST = "/sample-xml.plist";
@@ -36,6 +39,25 @@ public class ERXPropertyListSerializationTest {
 		String result = ERXPropertyListSerialization.convertDOMToString(document);
 		String expected = stringFromResource(EXPECTED_XML_PLIST);
 		assertEquals(expected, result);
+		return;
+	}
+
+	// From Wonder's ERXTest (author jw)
+	@Test
+	public void jsonStringFromPropertyListRoundTrips() {
+		// Non-ASCII characters are written unescaped
+		String stringObject = "fran\u00e7ais";
+		String jsonString = ERXPropertyListSerialization.jsonStringFromPropertyList(stringObject);
+		assertEquals("\"fran\u00e7ais\"", jsonString);
+		assertEquals(stringObject, ERXPropertyListSerialization.propertyListFromJSONString(jsonString));
+		// Integer array
+		NSArray<Integer> integerArray = new NSArray<>(new Integer[] { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) });
+		assertEquals("[1,2,3]", ERXPropertyListSerialization.jsonStringFromPropertyList(integerArray));
+		assertEquals("[\n\t1,\n\t2,\n\t3\n]", ERXPropertyListSerialization.jsonStringFromPropertyList(integerArray, false));
+		// Dictionary
+		NSDictionary<String, Integer> integerDict = new NSDictionary<>(new Integer[] { Integer.valueOf(1), Integer.valueOf(2) }, new String[] { "a", "b" });
+		assertEquals("{\"a\" : 1,\"b\" : 2}", ERXPropertyListSerialization.jsonStringFromPropertyList(integerDict));
+		assertEquals("{\n\t\"a\" : 1,\n\t\"b\" : 2\n}", ERXPropertyListSerialization.jsonStringFromPropertyList(integerDict, false));
 		return;
 	}
 

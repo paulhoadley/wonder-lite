@@ -1,0 +1,1 @@
+protocol=smtptest; type=transport; class=er.javamail.ERMailSenderTest$TestSMTPTransport; vendor=Project Wonder;

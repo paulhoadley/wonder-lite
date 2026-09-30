@@ -20,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
@@ -29,6 +30,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -866,8 +868,7 @@ public class ERXFileUtilities {
      * @throws IOException if things go wrong
      */
     public static void chmod(File file, String mode) throws IOException {
-        Process process = Runtime.getRuntime().exec(new String[] {"chmod", mode, file.getAbsolutePath()});
-        ERXRuntimeUtilities.freeProcessResources(process);
+        runAndWait("chmod", mode, file.getAbsolutePath());
     }
 
     /**
@@ -878,8 +879,30 @@ public class ERXFileUtilities {
      * @throws IOException if things go wrong
      */
     public static void chmodRecursively(File dir, String mode) throws IOException {
-        Process process = Runtime.getRuntime().exec(new String[] {"chmod", "-R", mode, dir.getAbsolutePath()});
-        ERXRuntimeUtilities.freeProcessResources(process);
+        runAndWait("chmod", "-R", mode, dir.getAbsolutePath());
+    }
+
+    /**
+     * Runs a command and waits for it to finish. Freeing the process's resources straight after starting it
+     * destroys the process, so without waiting a command like chmod may never run.
+     *
+     * @param command the command and its arguments
+     * @throws IOException if the command can't be started, is interrupted, or exits with a non-zero status
+     */
+    private static void runAndWait(String... command) throws IOException {
+        Process process = new ProcessBuilder(command).redirectErrorStream(true).start();
+        try {
+            String output = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
+            int status = process.waitFor();
+            if (status != 0) {
+                throw new IOException(String.join(" ", command) + " exited with status " + status + ": " + output);
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new InterruptedIOException("Interrupted while running " + String.join(" ", command));
+        } finally {
+            ERXRuntimeUtilities.freeProcessResources(process);
+        }
     }
     
     /**

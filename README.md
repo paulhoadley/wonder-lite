@@ -13,11 +13,36 @@ Dependencies
 Wonder Lite still has some, uh, _unusual_ dependencies that are going
 to take some thought to excise.
 
-* `wonder.core.ERFoundation-1.1`
+* `wonder.core.ERFoundation-1.2`
 * `wonder.core.ERWebObjects-1.0`
 
 Both of these are currently available from the WOCommunity Maven
 repository.
+
+Versioning
+----------
+Wonder Lite has its own group ID (`net.logicsquad.wonder`) and its own
+version line, starting at 0.1. It doesn't continue Wonder's 7.x.
+
+* All frameworks share one version, set in the root POM.
+* Any 0.x release may break compatibility with the one before it, so
+  pin an exact version.
+* 1.0 will be the first release we'd run in production.
+
+The starting point is Wonder's `master` branch as of 4 January 2026,
+commit
+[`da13591`](https://github.com/wocommunity/wonder/commit/da1359157a3433fabd64e739af64b3904e4547b9),
+which is Wonder 7.4 plus 15 small commits.
+
+Licence
+-------
+Wonder Lite is derived from Project Wonder and keeps its licence, the
+NetStruxr Public Software License, a BSD-style licence: see
+[LICENSE](LICENSE). ERJavaMail began as Camille Troillard's Odaiko
+MailDelivery framework, whose README says it's under the GNU Lesser
+General Public License: see [ERJavaMail/README.md](ERJavaMail/README.md).
+Bundled third-party files, such as the JavaScript libraries in Ajax,
+carry their own licences.
 
 FAQs
 ----
