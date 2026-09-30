@@ -13,7 +13,7 @@ Dependencies
 Wonder Lite still has some, uh, _unusual_ dependencies that are going
 to take some thought to excise.
 
-* `wonder.core.ERFoundation-1.1`
+* `wonder.core.ERFoundation-1.2`
 * `wonder.core.ERWebObjects-1.0`
 
 Both of these are currently available from the WOCommunity Maven
