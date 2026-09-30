@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
-  <name>Project Wonder</name>
+  <name>Wonder Lite</name>
   <groupId>net.logicsquad.wonder</groupId>
   <artifactId>wonder-lite</artifactId>
   <version>0.1-SNAPSHOT</version>
@@ -43,51 +43,46 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.14.1</version>
+          <version>3.16.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.12.1</version>
+          <version>3.12.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>2.1.2</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.3.1</version>
+          <version>3.5.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.7</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>2.3.1</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>2.4.3</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.2</version>
+          <version>3.6.0</version>
           <configuration>
             <!-- WebObjects' NSTimeZone uses a non-exported JDK class; see #27. -->
             <argLine>--add-exports java.base/sun.security.action=ALL-UNNAMED</argLine>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.5</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -114,7 +109,7 @@
           <execution>
             <id>attach-sources</id>
             <goals>
-              <goal>jar</goal>
+              <goal>jar-no-fork</goal>
             </goals>
           </execution>
         </executions>
@@ -124,7 +119,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
           <failOnError>false</failOnError>
-          <additionalparam>-Xdoclint:none</additionalparam>
+          <doclint>none</doclint>
         </configuration>
       </plugin>
     </plugins>
@@ -160,11 +155,6 @@
       </dependency>
       <dependency>
         <groupId>com.webobjects</groupId>
-        <artifactId>JavaDirectToWeb</artifactId>
-        <version>${webobjects.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.webobjects</groupId>
         <artifactId>JavaEOAccess</artifactId>
         <version>${webobjects.version}</version>
       </dependency>
@@ -176,11 +166,6 @@
       <dependency>
         <groupId>com.webobjects</groupId>
         <artifactId>JavaXML</artifactId>
-        <version>${webobjects.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.webobjects</groupId>
-        <artifactId>JavaEODistribution</artifactId>
         <version>${webobjects.version}</version>
       </dependency>
       <dependency>
@@ -261,11 +246,6 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.7.25</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
         <version>1.7.25</version>
       </dependency>
       <dependency>
@@ -374,24 +354,10 @@
     </pluginRepository>
   </pluginRepositories>
 
-  <distributionManagement>
-    <repository>
-      <id>wocommunity.deployment</id>
-      <name>WOCommunity Maven2 Releases Repository</name>
-      <url>https://maven.wocommunity.org/content/repositories/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>wocommunity.deployment</id>
-      <uniqueVersion>false</uniqueVersion>
-      <name>WOCommunity Maven2 Snapshots Repository</name>
-      <url>https://maven.wocommunity.org/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
-
   <scm>
-    <connection>scm:git:https://github.com/wocommunity/wonder.git</connection>
-    <url>scm:git:https://github.com/wocommunity/wonder.git</url>
-    <developerConnection>scm:git:https://github.com/wocommunity/wonder.git</developerConnection>
+    <connection>scm:git:https://github.com/paulhoadley/wonder-lite.git</connection>
+    <developerConnection>scm:git:git@github.com:paulhoadley/wonder-lite.git</developerConnection>
+    <url>https://github.com/paulhoadley/wonder-lite</url>
     <tag>HEAD</tag>
   </scm>
 </project>
