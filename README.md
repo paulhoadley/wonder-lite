@@ -19,6 +19,21 @@ to take some thought to excise.
 Both of these are currently available from the WOCommunity Maven
 repository.
 
+Versioning
+----------
+Wonder Lite has its own group ID (`net.logicsquad.wonder`) and its own
+version line, starting at 0.1. It doesn't continue Wonder's 7.x.
+
+* All frameworks share one version, set in the root POM.
+* Any 0.x release may break compatibility with the one before it, so
+  pin an exact version.
+* 1.0 will be the first release we'd run in production.
+
+The starting point is Wonder's `master` branch as of 4 January 2026,
+commit
+[`da13591`](https://github.com/wocommunity/wonder/commit/da1359157a3433fabd64e739af64b3904e4547b9),
+which is Wonder 7.4 plus 15 small commits.
+
 FAQs
 ----
 * _My favourite framework/feature is missing—where did it go?_ It was

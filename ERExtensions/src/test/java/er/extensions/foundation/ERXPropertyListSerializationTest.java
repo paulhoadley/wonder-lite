@@ -17,7 +17,7 @@ import org.w3c.dom.Document;
  * Unit tests on {@link ERXPropertyListSerialization}.
  * 
  * @author paulh
- * @since wonder-lite-1.0
+ * @since 0.1
  */
 public class ERXPropertyListSerializationTest {
 	private static final String SAMPLE_XML_PLIST = "/sample-xml.plist";
