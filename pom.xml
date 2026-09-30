@@ -11,7 +11,6 @@
     <module>Ajax</module>
     <module>ERAttachment</module>
     <module>ERAttributeExtension</module>
-    <module>ERCoolComponents</module>
     <module>ERExtensions</module>
     <module>ERJavaMail</module>
     <module>ERJGroupsSynchronizer</module>
@@ -227,11 +226,6 @@
       <dependency>
         <groupId>net.logicsquad.wonder</groupId>
         <artifactId>ERRest</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.logicsquad.wonder</groupId>
-        <artifactId>ERCoolComponents</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
