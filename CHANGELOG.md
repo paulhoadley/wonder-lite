@@ -8,6 +8,13 @@ compatibility with the one before it.
 Unreleased
 ----------
 
+### Added
+
+- JavaMemoryAdaptor, the in-memory EOF adaptor that WOUnit depends
+  on, is back. Unlike Wonder's builds, its bundle declares
+  `EOAdaptorClassName`, so EOF finds the `Memory` adaptor without
+  WOUnit's workaround ([#15]).
+
 0.1 — 2026-10-01
 ----------------
 The first release. It sets a trustworthy baseline: the build, the
@@ -119,6 +126,7 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#12]: https://github.com/paulhoadley/wonder-lite/issues/12
 [#13]: https://github.com/paulhoadley/wonder-lite/issues/13
 [#14]: https://github.com/paulhoadley/wonder-lite/issues/14
+[#15]: https://github.com/paulhoadley/wonder-lite/issues/15
 [#16]: https://github.com/paulhoadley/wonder-lite/issues/16
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
