@@ -34,6 +34,33 @@ commit
 [`da13591`](https://github.com/wocommunity/wonder/commit/da1359157a3433fabd64e739af64b3904e4547b9),
 which is Wonder 7.4 plus 15 small commits.
 
+Using Wonder Lite
+-----------------
+Import the BOM to manage the versions of every framework, and of the
+ERFoundation and ERWebObjects jars they need:
+
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>net.logicsquad.wonder</groupId>
+      <artifactId>wonder-lite-bom</artifactId>
+      <version>${wonder-lite.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+
+Then declare the frameworks you use without versions. Importing the BOM
+adds no dependencies by itself, so your app gets only those frameworks
+and what they depend on. The BOM doesn't manage third-party libraries,
+so your app keeps its own versions of those. Wonder Lite isn't published
+to a Maven repository yet
+([#16](https://github.com/paulhoadley/wonder-lite/issues/16)), so
+install it locally with `mvn install` first.
+
 Licence
 -------
 Wonder Lite is derived from Project Wonder and keeps its licence, the

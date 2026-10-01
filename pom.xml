@@ -22,6 +22,7 @@
     <module>JavaWOExtensions</module>
     <module>PostgresqlPlugIn</module>
     <module>WOOgnl</module>
+    <module>wonder-lite-bom</module>
   </modules>
 
   <properties>

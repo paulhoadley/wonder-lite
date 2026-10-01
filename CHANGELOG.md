@@ -14,6 +14,9 @@ Unreleased
   on, is back. Unlike Wonder's builds, its bundle declares
   `EOAdaptorClassName`, so EOF finds the `Memory` adaptor without
   WOUnit's workaround ([#15]).
+- A BOM, `net.logicsquad.wonder:wonder-lite-bom`. Importing it
+  manages the versions of every framework and of the ERFoundation
+  and ERWebObjects jars, and nothing else ([#17]).
 
 0.1 — 2026-10-01
 ----------------
@@ -128,6 +131,7 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#14]: https://github.com/paulhoadley/wonder-lite/issues/14
 [#15]: https://github.com/paulhoadley/wonder-lite/issues/15
 [#16]: https://github.com/paulhoadley/wonder-lite/issues/16
+[#17]: https://github.com/paulhoadley/wonder-lite/issues/17
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
 [#31]: https://github.com/paulhoadley/wonder-lite/issues/31
