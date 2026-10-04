@@ -18,6 +18,12 @@ Unreleased
   manages the versions of every framework and of the ERFoundation
   and ERWebObjects jars, and nothing else ([#17]).
 
+### Fixed
+
+- Sources jars now hold only sources. They used to include each
+  framework's resources under paths starting with `../`, which some
+  tools and repositories refuse ([#39]).
+
 0.1 — 2026-10-01
 ----------------
 The first release. It sets a trustworthy baseline: the build, the
@@ -135,3 +141,4 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
 [#31]: https://github.com/paulhoadley/wonder-lite/issues/31
+[#39]: https://github.com/paulhoadley/wonder-lite/issues/39

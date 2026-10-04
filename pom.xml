@@ -113,6 +113,11 @@
             <goals>
               <goal>jar-no-fork</goal>
             </goals>
+            <configuration>
+              <!-- Resources ship in the main jar. Here they'd land under
+                   ../<Name>.framework/Resources; see #39. -->
+              <excludeResources>true</excludeResources>
+            </configuration>
           </execution>
         </executions>
       </plugin>
