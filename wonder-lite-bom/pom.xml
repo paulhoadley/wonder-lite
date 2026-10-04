@@ -7,7 +7,7 @@
   -->
   <groupId>net.logicsquad.wonder</groupId>
   <artifactId>wonder-lite-bom</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.2</version>
   <packaging>pom</packaging>
   <name>Wonder Lite BOM</name>
 
