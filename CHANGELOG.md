@@ -5,6 +5,41 @@ All notable changes to Wonder Lite are recorded here. Wonder Lite has
 its own version line (see the README), and any 0.x release may break
 compatibility with the one before it.
 
+0.2 — 2026-10-04
+----------------
+The first app runs on Wonder Lite. A production app has moved from
+Wonder 7.4 to this release and runs in staging ([#18]). This release
+adds what that took: the in-memory EOF adaptor that WOUnit tests need,
+and a BOM for apps to import.
+
+### Added
+
+- JavaMemoryAdaptor, the in-memory EOF adaptor that WOUnit depends
+  on, is back. Unlike Wonder's builds, its bundle declares
+  `EOAdaptorClassName`, so EOF finds the `Memory` adaptor without
+  WOUnit's workaround ([#15]).
+- A BOM, `net.logicsquad.wonder:wonder-lite-bom`. Importing it
+  manages the versions of every framework and of the ERFoundation
+  and ERWebObjects jars, and nothing else ([#17]).
+
+### Fixed
+
+- Sources jars now hold only sources. They used to include each
+  framework's resources under paths starting with `../`, which some
+  tools and repositories refuse ([#39]).
+
+### Known issues
+
+None of 0.1's known issues is fixed yet:
+
+- `NSTimeZone.systemTimeZone()` fails on JDK 24 and later ([#27]).
+- Bundles report `CFBundleIdentifier` as `com.apple.myapp`, because
+  wolifecycle-maven-plugin 2.5 can't set it.
+- `jsonStringFromPropertyList()` can write invalid JSON escapes
+  ([#31]).
+- Tests that need an EOF model have not been ported yet ([#20]).
+- Releases are not yet published to a Maven repository ([#16]).
+
 0.1 — 2026-10-01
 ----------------
 The first release. It sets a trustworthy baseline: the build, the
@@ -116,7 +151,11 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#12]: https://github.com/paulhoadley/wonder-lite/issues/12
 [#13]: https://github.com/paulhoadley/wonder-lite/issues/13
 [#14]: https://github.com/paulhoadley/wonder-lite/issues/14
+[#15]: https://github.com/paulhoadley/wonder-lite/issues/15
 [#16]: https://github.com/paulhoadley/wonder-lite/issues/16
+[#17]: https://github.com/paulhoadley/wonder-lite/issues/17
+[#18]: https://github.com/paulhoadley/wonder-lite/issues/18
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
 [#31]: https://github.com/paulhoadley/wonder-lite/issues/31
+[#39]: https://github.com/paulhoadley/wonder-lite/issues/39

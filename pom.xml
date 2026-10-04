@@ -5,7 +5,7 @@
   <name>Wonder Lite</name>
   <groupId>net.logicsquad.wonder</groupId>
   <artifactId>wonder-lite</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
 
   <modules>
     <module>Ajax</module>
@@ -18,9 +18,11 @@
     <module>ERPrototypes</module>
     <module>ERRest</module>
     <module>H2PlugIn</module>
+    <module>JavaMemoryAdaptor</module>
     <module>JavaWOExtensions</module>
     <module>PostgresqlPlugIn</module>
     <module>WOOgnl</module>
+    <module>wonder-lite-bom</module>
   </modules>
 
   <properties>
@@ -111,6 +113,11 @@
             <goals>
               <goal>jar-no-fork</goal>
             </goals>
+            <configuration>
+              <!-- Resources ship in the main jar. Here they'd land under
+                   ../<Name>.framework/Resources; see #39. -->
+              <excludeResources>true</excludeResources>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -171,6 +178,11 @@
       <dependency>
         <groupId>net.logicsquad.wonder</groupId>
         <artifactId>ERExtensions</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.logicsquad.wonder</groupId>
+        <artifactId>JavaMemoryAdaptor</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
