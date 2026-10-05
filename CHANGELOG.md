@@ -51,6 +51,10 @@ Unreleased
   `ERXGenericRecord`, which had fallen well behind it ([#23]).
 - `ERXForwardingAdaptor`, with its channel and context: a base class for
   EOF adaptors that pass their calls on to another adaptor ([#23]).
+- Qualifiers that nothing used: `ERXBetweenQualifier`,
+  `ERXQualifierInSubquery`, `ERXModuloQualifier`,
+  `ERXQuicksilverQualifier` and `ERXInOrQualifierSupport`. `ERXQ`'s and
+  `ERXKey`'s `between()` methods are unchanged ([#23]).
 
 ### Build and tests
 

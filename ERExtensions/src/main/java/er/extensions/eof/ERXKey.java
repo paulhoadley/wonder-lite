@@ -2182,8 +2182,7 @@ public class ERXKey<T> {
 	}
 	
 	/**
-	 * Equivalent to key &gt; lowerBound and key &lt; upperBound (exclusive). Note
-	 * that this does not return an ERXBetweenQualifier.
+	 * Equivalent to key &gt; lowerBound and key &lt; upperBound (exclusive).
 	 * 
 	 * @param lowerBound
 	 *            the lower bound value
@@ -2196,8 +2195,7 @@ public class ERXKey<T> {
 	}
 
 	/**
-	 * Equivalent to key &gt;= lowerBound and key &lt;= upperBound (inclusive). Note
-	 * that this does not return an ERXBetweenQualifier.
+	 * Equivalent to key &gt;= lowerBound and key &lt;= upperBound (inclusive).
 	 * 
 	 * @param lowerBound
 	 *            the lower bound value

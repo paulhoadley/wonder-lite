@@ -721,8 +721,7 @@ public class ERXQ {
 	}
 
 	/**
-	 * Equivalent to key &gt; lowerBound and key &lt; upperBound (exclusive). Not that
-	 * this does not return an ERXBetweenQualifier.
+	 * Equivalent to key &gt; lowerBound and key &lt; upperBound (exclusive).
 	 *
 	 * @param key
 	 *            the key
@@ -737,8 +736,7 @@ public class ERXQ {
 	}
 
 	/**
-	 * Equivalent to key &gt;= lowerBound and key &lt;= upperBound (inclusive). Not
-	 * that this does not return an ERXBetweenQualifier.
+	 * Equivalent to key &gt;= lowerBound and key &lt;= upperBound (inclusive).
 	 *
 	 * @param key
 	 *            the key
