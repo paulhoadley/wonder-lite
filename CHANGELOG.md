@@ -8,6 +8,12 @@ compatibility with the one before it.
 Unreleased
 ----------
 
+### Build and tests
+
+- `ERXExpiringCacheTestCase`, from Wonder's ERXTest application, runs
+  in ERExtensions, which now has 632 tests. Its expiry test takes 7
+  seconds rather than 55 ([#20]).
+
 0.2 — 2026-10-04
 ----------------
 The first app runs on Wonder Lite. A production app has moved from
