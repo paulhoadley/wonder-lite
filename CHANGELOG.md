@@ -86,6 +86,8 @@ Unreleased
   `ERXProxyAssociation` ([#23]).
 - `ERXListDisplayGroup`, a display group over a `List`, with the
   `IBatchingList` interface and `AbstractBatchingList` ([#23]).
+- `ERXWOXMLCoder`, a `WOXMLMappingCoder` that sorted attributes
+  ([#23]).
 
 ### Build and tests
 
