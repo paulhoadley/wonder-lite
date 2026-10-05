@@ -17,6 +17,11 @@ Unreleased
   It now empties the entity's table, as `resetAllEntities()` empties
   every table ([#40]).
 
+### Removed
+
+- `ERXQuery`, with `ERXQueryAttributes` and `ERXQueryEOAttribute`
+  ([#23]).
+
 ### Build and tests
 
 - Tests that need an EOF model are ported, into `wonder-lite-tests`, a
@@ -192,6 +197,7 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
 [#21]: https://github.com/paulhoadley/wonder-lite/issues/21
 [#22]: https://github.com/paulhoadley/wonder-lite/issues/22
+[#23]: https://github.com/paulhoadley/wonder-lite/issues/23
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
 [#31]: https://github.com/paulhoadley/wonder-lite/issues/31
 [#39]: https://github.com/paulhoadley/wonder-lite/issues/39
