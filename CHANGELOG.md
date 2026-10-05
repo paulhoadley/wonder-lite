@@ -81,6 +81,9 @@ Unreleased
   `ERXDecimalFormatSymbols` ([#23]).
 - `ERXPathDirectActionRequestHandler` and `ERXPathDirectAction`, which
   read direct action parameters from the request path ([#23]).
+- Associations that nothing installed: `ERXNegateAssociation` (for
+  `not:` bindings), `ERXLocalizerAssociation` (for `loc:` bindings) and
+  `ERXProxyAssociation` ([#23]).
 
 ### Build and tests
 
