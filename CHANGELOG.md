@@ -21,6 +21,10 @@ Unreleased
 
 - `ERXQuery`, with `ERXQueryAttributes` and `ERXQueryEOAttribute`
   ([#23]).
+- Clients for retired web services: `ERXGoogleSpell` (Google's spell
+  checker), `ERXYahooContentAnalysisService`, `ERXGMapUtilities`
+  (Google's version 2 geocoder) and `ERXPageTracker` (Google Analytics'
+  `ga.js`) ([#23]).
 
 ### Build and tests
 
