@@ -93,6 +93,8 @@ Unreleased
 - `ERXLongResponse` and `ERXLongResponseTask`, `ERXWOLongResponsePage`,
   `ERXRunnable` and `ERXJobLoadBalancer`. `ERXTask` and the rest of the
   `concurrency` package stay ([#23]).
+- `ERXDutchLocalizer` and `ERXItalianLocalizer`, the Dutch and Italian
+  plural rules for `ERXLocalizer` ([#23]).
 
 ### Build and tests
 
