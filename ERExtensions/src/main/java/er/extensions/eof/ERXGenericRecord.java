@@ -1388,7 +1388,7 @@ public class ERXGenericRecord extends EOGenericRecord implements ERXGuardedObjec
 	}
 	
 	/**
-	 * Provides automatic inverse relationship updating for ERXGenericRecord and ERXCustomObject.
+	 * Provides automatic inverse relationship updating for ERXGenericRecord.
 	 * 
 	 * @property er.extensions.ERXEnterpriseObject.updateInverseRelationships if true, inverse relationships are automatically updated
 	 * 

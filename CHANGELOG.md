@@ -47,6 +47,8 @@ Unreleased
     `ERXWOTestResult`, left over from the `er.testrunner` package,
     `ERXBooleanPopUpButton` and `ERXDHTMLComponent`, with the script
     and images that only `ERXDHTMLComponent` used.
+- `ERXCustomObject`, the `EOCustomObject`-based counterpart of
+  `ERXGenericRecord`, which had fallen well behind it ([#23]).
 
 ### Build and tests
 

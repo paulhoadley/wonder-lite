@@ -121,7 +121,7 @@ er.extensions.ERXMessageEncoding.Enabled=true
 ## This is  save as validateForSave will still fail.
 # er.extensions.ERXValidationShouldPushChangesToObject = true
 
-## ERXGenericRecord and ERXCustomObject's didXXX() rely on a proper EC delegate 
+## ERXGenericRecord's didXXX() methods rely on a proper EC delegate
 er.extensions.ERXRaiseOnMissingEditingContextDelegate = true
 
 ## You can specify a factory class that creates the actual class description 
@@ -159,11 +159,9 @@ er.extensions.ERXRaiseOnMissingEditingContextDelegate = true
 
 ## Specifies if the string attributes are trimmed before sending to the DB
 # er.extensions.ERXGenericRecord.shouldTrimSpaces = true
-# er.extensions.ERXCustomObject.shouldTrimSpaces = true
 
 ## Whether to use Validity when validating (NOTE: MOVE this to ERXEntityClassDescription)
 # er.extensions.ERXGenericRecord.useValidity = true
-# er.extensions.ERXCustomObject.useValidity = true
 
 ## Padding for ERXInQualifier
 # er.extensions.ERXInQualifier.DefaultPadToSize = 8
