@@ -84,6 +84,8 @@ Unreleased
 - Associations that nothing installed: `ERXNegateAssociation` (for
   `not:` bindings), `ERXLocalizerAssociation` (for `loc:` bindings) and
   `ERXProxyAssociation` ([#23]).
+- `ERXListDisplayGroup`, a display group over a `List`, with the
+  `IBatchingList` interface and `AbstractBatchingList` ([#23]).
 
 ### Build and tests
 
