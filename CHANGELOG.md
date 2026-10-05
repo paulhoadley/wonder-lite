@@ -39,6 +39,14 @@ Unreleased
   action-delegate types it builds on, which nothing else uses:
   `IERXPerformWOAction`, `IERXPerformWOActionForResult`,
   `IERXRefreshPage` and `ERXAbstractPerformWOAction` ([#23]).
+- Unfinished and orphaned code ([#23]):
+  - `ERXGroupingFetchSpecification` and `ERXTemporaryGlobalID`, marked
+    as work in progress and as experimental.
+  - `ERXCloneableEnterpriseObject`, which nothing implemented.
+  - Three components that are only templates and that nothing uses:
+    `ERXWOTestResult`, left over from the `er.testrunner` package,
+    `ERXBooleanPopUpButton` and `ERXDHTMLComponent`, with the script
+    and images that only `ERXDHTMLComponent` used.
 
 ### Build and tests
 
