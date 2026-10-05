@@ -28,6 +28,9 @@ Unreleased
 - Support for obsolete formats and protocols: `ERXFlashMovie` (Flash),
   `ERXGraphUtilities` (GifPlot), `ERXMacBinarySwissArmyKnife` (BinHex
   and MacBinary) and `ERXLinlyn` (an FTP client) ([#23]).
+- Workarounds for old browsers: `ERXModernizr`, `ERXOptGroupBrowser`,
+  `ERXOptGroupPopupButton`, `ERXJSCookiesConditional`,
+  `ERXJSPopupBlockerConditional` and `ERXLinkRandomizer` ([#23]).
 
 ### Build and tests
 
