@@ -88,6 +88,8 @@ Unreleased
   `IBatchingList` interface and `AbstractBatchingList` ([#23]).
 - `ERXWOXMLCoder`, a `WOXMLMappingCoder` that sorted attributes
   ([#23]).
+- `ERXMainRunner`, a WebObjects application for running another class's
+  `main()` inside a full application context ([#23]).
 
 ### Build and tests
 

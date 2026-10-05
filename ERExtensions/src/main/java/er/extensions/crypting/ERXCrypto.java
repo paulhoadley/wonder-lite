@@ -299,8 +299,8 @@ public class ERXCrypto {
 	}
 
 	/**
-	 * Run this with ERXMainRunner passing in the plaintext you want to encrypt
-	 * using the default crypter. This is useful if you are using encrypted 
+	 * Run this passing in the plaintext you want to encrypt using the default
+	 * crypter. This is useful if you are using encrypted 
 	 * properties and you need a quick way to know what to set the property
 	 * value to.
 	 * 
