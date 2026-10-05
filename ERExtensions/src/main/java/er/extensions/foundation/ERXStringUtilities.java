@@ -55,7 +55,6 @@ import com.webobjects.foundation.NSTimestamp;
 
 import er.extensions.appserver.ERXMessageEncoding;
 import er.extensions.eof.ERXConstant;
-import er.extensions.formatters.ERXSimpleHTMLFormatter;
 
 /**
  * Collection of {@link java.lang.String String} utilities. Contains
@@ -2082,8 +2081,6 @@ public class ERXStringUtilities {
      * Removes all of the HTML tags from a given string.
      * Note: this is a very simplistic implementation
      * and will most likely not work with complex HTML.
-     * Note: for actual conversion of HTML tags into regular
-     * strings have a look at {@link ERXSimpleHTMLFormatter}
      * @param s html string
      * @return string with all of its html tags removed
      */

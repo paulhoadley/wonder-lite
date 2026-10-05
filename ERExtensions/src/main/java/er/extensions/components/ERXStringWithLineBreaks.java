@@ -70,7 +70,6 @@ public class ERXStringWithLineBreaks extends ERXStatelessComponent {
 	 * 
 	 * @return converted string
 	 */
-    // FIXME: Should use ERXSimpleHTMLFormatter
     public String value() {
         if (_value == null) {
             Object value = objectValueForBinding("value");

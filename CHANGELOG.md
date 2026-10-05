@@ -75,6 +75,10 @@ Unreleased
   `ERXDateTimeFormatter` base class). `AjaxDatePicker`'s `formatter`
   binding now takes only an `NSTimestampFormatter` or a
   `SimpleDateFormat` ([#23]).
+- Other formatters that nothing used: `ERXNSTimestampFormatter`,
+  `ERXOrdinalFormatter` and `ERXOrdinalDateFormatter` (with their
+  tests), `ERXSimpleHTMLFormatter`, `ERXCryptoStringFormatter` and
+  `ERXDecimalFormatSymbols` ([#23]).
 
 ### Build and tests
 
