@@ -31,6 +31,9 @@ Unreleased
 - Workarounds for old browsers: `ERXModernizr`, `ERXOptGroupBrowser`,
   `ERXOptGroupPopupButton`, `ERXJSCookiesConditional`,
   `ERXJSPopupBlockerConditional` and `ERXLinkRandomizer` ([#23]).
+- The Log4j 1 appenders `ERXMailAppender`, `ERXEOFAppender` (with
+  `ERXEOFLogEntryInterface`) and `ERXThreadStorageAppender`, and
+  `ERXNSPrintWriterLogger`, an `NSLog` logger ([#23]).
 
 ### Build and tests
 
