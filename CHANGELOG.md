@@ -49,6 +49,8 @@ Unreleased
     and images that only `ERXDHTMLComponent` used.
 - `ERXCustomObject`, the `EOCustomObject`-based counterpart of
   `ERXGenericRecord`, which had fallen well behind it ([#23]).
+- `ERXForwardingAdaptor`, with its channel and context: a base class for
+  EOF adaptors that pass their calls on to another adaptor ([#23]).
 
 ### Build and tests
 
