@@ -26,6 +26,12 @@ Unreleased
 - `ERXExpiringCacheTestCase`, from Wonder's ERXTest application, runs
   in ERExtensions, which now has 632 tests. Its expiry test takes 7
   seconds rather than 55 ([#20]).
+- H2PlugIn and PostgresqlPlugIn have tests. 14 from Wonder's
+  PluginTest application create the schema, read and write, and query
+  from many threads, and a new one checks ERPrototypes' prototypes for
+  the database. They run against an in-memory H2 database, and against
+  PostgreSQL in Docker through Testcontainers. Without Docker, the
+  PostgreSQL tests are skipped ([#21]).
 
 0.2 — 2026-10-04
 ----------------

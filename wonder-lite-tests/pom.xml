@@ -37,6 +37,50 @@
                one deadlocks, fail the build rather than hang it. -->
           <forkedProcessTimeoutInSeconds>300</forkedProcessTimeoutInSeconds>
         </configuration>
+        <executions>
+          <!-- EOF can be set up only once in a JVM, so the database plugin
+               tests run apart from the others, once for each database, each
+               in a JVM of its own. -->
+          <execution>
+            <id>default-test</id>
+            <configuration>
+              <excludes>
+                <exclude>er/plugintest/**</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+          <execution>
+            <id>plugin-tests-h2</id>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>er/plugintest/**/*Test.java</include>
+              </includes>
+              <systemPropertyVariables>
+                <plugintest.database>h2</plugintest.database>
+              </systemPropertyVariables>
+              <reportNameSuffix>h2</reportNameSuffix>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- Needs Docker, and skips its tests without it. -->
+            <id>plugin-tests-postgresql</id>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>er/plugintest/**/*Test.java</include>
+              </includes>
+              <systemPropertyVariables>
+                <plugintest.database>postgresql</plugintest.database>
+              </systemPropertyVariables>
+              <reportNameSuffix>postgresql</reportNameSuffix>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
@@ -55,6 +99,28 @@
     <dependency>
       <groupId>net.logicsquad.wonder</groupId>
       <artifactId>JavaMemoryAdaptor</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.logicsquad.wonder</groupId>
+      <artifactId>H2PlugIn</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.logicsquad.wonder</groupId>
+      <artifactId>PostgresqlPlugIn</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers-postgresql</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

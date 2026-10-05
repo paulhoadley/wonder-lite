@@ -260,6 +260,20 @@
         <artifactId>wounit</artifactId>
         <version>2.0</version>
       </dependency>
+      <!-- wonder-lite-tests runs PostgresqlPlugIn's tests against a PostgreSQL
+           server in a container. -->
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers-bom</artifactId>
+        <version>2.0.5</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.7.13</version>
+      </dependency>
       <dependency>
         <groupId>com.ibm.icu</groupId>
         <artifactId>icu4j</artifactId>
