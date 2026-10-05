@@ -95,6 +95,11 @@ Unreleased
   `concurrency` package stay ([#23]).
 - `ERXDutchLocalizer` and `ERXItalianLocalizer`, the Dutch and Italian
   plural rules for `ERXLocalizer` ([#23]).
+- Utilities that nothing used: `ERXLazyValue`, `ERXHyperlinkResource`
+  and `ERXStaticResource`, `ERXCommandLineTokenizer`,
+  `ERXFileRepository`, `ERXComparisonSupport`, `ERXComparatorSupport`
+  and `ERXComparatorSelector`, `ERXEmailValidator` (with its test),
+  `ERXKeyStoreBlowfishCrypter` and `ERXExceptionHolder` ([#23]).
 
 ### Build and tests
 
