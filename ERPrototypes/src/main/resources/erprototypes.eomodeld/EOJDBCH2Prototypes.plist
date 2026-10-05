@@ -63,7 +63,7 @@
         }, 
         {
             columnName = ""; 
-            externalType = "DOUBLE PRECISION"; 
+            externalType = DOUBLE; 
             name = doubleNumber; 
             valueClassName = NSNumber; 
             valueType = d; 
@@ -242,7 +242,7 @@
         }, 
         {
             columnName = ""; 
-            externalType = LONGTEXT; 
+            externalType = CLOB; 
             name = longText; 
             valueClassName = NSString; 
             valueType = c; 

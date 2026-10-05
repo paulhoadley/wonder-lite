@@ -8,6 +8,12 @@ compatibility with the one before it.
 Unreleased
 ----------
 
+### Fixed
+
+- Two H2 prototypes, `doubleNumber` and `longText`, named column types
+  that H2 doesn't report, so EOF couldn't generate SQL for attributes
+  that used them. They're now `DOUBLE` and `CLOB` ([#21]).
+
 ### Build and tests
 
 - Tests that need an EOF model are ported, into `wonder-lite-tests`, a
@@ -172,6 +178,7 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#17]: https://github.com/paulhoadley/wonder-lite/issues/17
 [#18]: https://github.com/paulhoadley/wonder-lite/issues/18
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
+[#21]: https://github.com/paulhoadley/wonder-lite/issues/21
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
 [#31]: https://github.com/paulhoadley/wonder-lite/issues/31
 [#39]: https://github.com/paulhoadley/wonder-lite/issues/39
