@@ -10,6 +10,13 @@ Unreleased
 
 ### Build and tests
 
+- Tests that need an EOF model are ported, into `wonder-lite-tests`, a
+  module that holds tests only and is never installed or deployed. Its
+  174 tests come from Wonder's ERXTest application, and cover `ERXEC`
+  and its locking, `ERXKey`, `ERXEOAccessUtilities`,
+  `ERXEOControlUtilities`, `ERXEnterpriseObjectCache`,
+  `ERXThreadStorage` and JavaMemoryAdaptor, among others. They run on
+  the Memory adaptor, with WOUnit 2.0 and JUnit Jupiter ([#20]).
 - `ERXExpiringCacheTestCase`, from Wonder's ERXTest application, runs
   in ERExtensions, which now has 632 tests. Its expiry test takes 7
   seconds rather than 55 ([#20]).

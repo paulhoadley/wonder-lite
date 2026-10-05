@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.logicsquad.wonder</groupId>
+    <artifactId>wonder-lite</artifactId>
+    <version>0.3-SNAPSHOT</version>
+  </parent>
+
+  <!--
+    Tests that need an EOF model and an adaptor. They can't live in
+    ERExtensions, because JavaMemoryAdaptor depends on ERExtensions. This
+    module holds tests only, so nothing is packaged, installed or deployed.
+  -->
+  <artifactId>wonder-lite-tests</artifactId>
+  <name>Wonder Lite Tests</name>
+  <packaging>jar</packaging>
+
+  <properties>
+    <maven.install.skip>true</maven.install.skip>
+    <maven.deploy.skip>true</maven.deploy.skip>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <skipIfEmpty>true</skipIfEmpty>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- Some of these tests lock editing contexts across threads. If
+               one deadlocks, fail the build rather than hang it. -->
+          <forkedProcessTimeoutInSeconds>300</forkedProcessTimeoutInSeconds>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.logicsquad.wonder</groupId>
+      <artifactId>ERExtensions</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.logicsquad.wonder</groupId>
+      <artifactId>ERPrototypes</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.logicsquad.wonder</groupId>
+      <artifactId>JavaMemoryAdaptor</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.logicsquad</groupId>
+      <artifactId>wounit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
