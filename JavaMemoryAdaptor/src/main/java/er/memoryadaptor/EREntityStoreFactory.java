@@ -49,16 +49,17 @@ public class EREntityStoreFactory {
   
   /**
    * Resets the given entity, removing any known rows and
-   * clearing out any transactions. This is the equivalent
+   * clearing out any transactions. This is the equivalent of
    * deleting all rows in a relational database table. Be
    * careful using this if you use single table inheritance.
-   * 
+   *
    * @param entity the entity to reset
    */
   public void resetEntity(EOEntity entity) {
-    _entityStores.removeObjectForKey(entity);
+    String externalName = _entityExternalName(entity);
+    _entityStores.removeObjectForKey(externalName);
     if (_transactionEntityStores != null) {
-      _transactionEntityStores.removeObjectForKey(entity);
+      _transactionEntityStores.removeObjectForKey(externalName);
     }
   }
 

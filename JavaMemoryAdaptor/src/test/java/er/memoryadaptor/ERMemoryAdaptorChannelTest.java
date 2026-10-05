@@ -121,4 +121,10 @@ public class ERMemoryAdaptorChannelTest {
     context.rollbackTransaction();
     assertEquals(2, fetchNames(null).count());
   }
+
+  @Test
+  public void resetEntityRemovesItsRows() {
+    context.resetEntity(entity);
+    assertEquals(0, fetchNames(null).count());
+  }
 }
