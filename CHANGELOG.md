@@ -58,6 +58,8 @@ Unreleased
 - `ERXSQLQueryWithBindingsUtilities`, for raw SQL with bound
   variables, with `ERXSQLBinding`, `ERXKeyValueBinding` and
   `ERXObjectBinding` ([#23]).
+- `ERXLongPrimaryKeyFactory`, which generated `Long` primary keys
+  that could encode the entity and host ([#23]).
 
 ### Build and tests
 
