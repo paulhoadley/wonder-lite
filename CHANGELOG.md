@@ -79,6 +79,8 @@ Unreleased
   `ERXOrdinalFormatter` and `ERXOrdinalDateFormatter` (with their
   tests), `ERXSimpleHTMLFormatter`, `ERXCryptoStringFormatter` and
   `ERXDecimalFormatSymbols` ([#23]).
+- `ERXPathDirectActionRequestHandler` and `ERXPathDirectAction`, which
+  read direct action parameters from the request path ([#23]).
 
 ### Build and tests
 
