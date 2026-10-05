@@ -55,6 +55,9 @@ Unreleased
   `ERXQualifierInSubquery`, `ERXModuloQualifier`,
   `ERXQuicksilverQualifier` and `ERXInOrQualifierSupport`. `ERXQ`'s and
   `ERXKey`'s `between()` methods are unchanged ([#23]).
+- `ERXSQLQueryWithBindingsUtilities`, for raw SQL with bound
+  variables, with `ERXSQLBinding`, `ERXKeyValueBinding` and
+  `ERXObjectBinding` ([#23]).
 
 ### Build and tests
 
