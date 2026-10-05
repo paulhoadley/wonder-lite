@@ -34,6 +34,11 @@ Unreleased
 - The Log4j 1 appenders `ERXMailAppender`, `ERXEOFAppender` (with
   `ERXEOFLogEntryInterface`) and `ERXThreadStorageAppender`, and
   `ERXNSPrintWriterLogger`, an `NSLog` logger ([#23]).
+- `ERXNextPageForResultWOAction`, a delegate for ERCoolComponents'
+  `CCAjaxLongResponsePage`, which Wonder Lite doesn't include, and the
+  action-delegate types it builds on, which nothing else uses:
+  `IERXPerformWOAction`, `IERXPerformWOActionForResult`,
+  `IERXRefreshPage` and `ERXAbstractPerformWOAction` ([#23]).
 
 ### Build and tests
 
