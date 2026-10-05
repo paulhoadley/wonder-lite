@@ -644,20 +644,6 @@ dbMinConnectionsGLOBAL=1
 ## so the top level app Properties would only define the app's model.
 # HotNewModel.MigrationClassPrefix=com.mdimension.hotnew.migration.HotNewModel
 
-## If you need database specific migrations for ERXMigration subclasses, use
-## er.extensions.migration.ERXMigration.useDatabaseSpecificMigrations=true
-## The default is not to use database specific migrations. A filename
-## for a database specific migration is then for example
-##
-## HotNewModel1_FrontBase_Upgrade.migration
-## or
-## HotNewModel1_Postgresql_Upgrade.migration
-##
-## For the database specific part of the filename, the databaseProductName as from the JDBC
-## adaptor is used. So make sure, you're using the correct filename. The migration will throw
-## an exception if the appropriate migration textfile can't be found.
-# er.extensions.migration.ERXMigration.useDatabaseSpecificMigrations=false
-
 #########################################################################
 # ERXExceptionUtilities 
 #########################################################################

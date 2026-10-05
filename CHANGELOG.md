@@ -60,6 +60,13 @@ Unreleased
   `ERXObjectBinding` ([#23]).
 - `ERXLongPrimaryKeyFactory`, which generated `Long` primary keys
   that could encode the entity and host ([#23]).
+- Other EOF utilities that nothing used: `ERXDummyRecord`,
+  `ERXUnmodeledToManyRelationship`, `ERXEnterpriseObjectArrayCache`,
+  `ERXEnterpriseObjectChangeListener`, `ERXFaultArray`, `ERXGlobalLock`,
+  `ERXEOAttribute`, `ERXDatabaseDataSource`, `ERXDetailDataSource`,
+  `ERXJDBCPlugInUtilities`, and `ERXMigration`, the base class for
+  migrations kept in `.migration` SQL files. Migrations built on
+  `ERXMigrationDatabase.Migration` work as before ([#23]).
 
 ### Build and tests
 
