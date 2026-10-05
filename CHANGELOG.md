@@ -90,6 +90,9 @@ Unreleased
   ([#23]).
 - `ERXMainRunner`, a WebObjects application for running another class's
   `main()` inside a full application context ([#23]).
+- `ERXLongResponse` and `ERXLongResponseTask`, `ERXWOLongResponsePage`,
+  `ERXRunnable` and `ERXJobLoadBalancer`. `ERXTask` and the rest of the
+  `concurrency` package stay ([#23]).
 
 ### Build and tests
 
