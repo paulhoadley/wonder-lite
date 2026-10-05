@@ -1,17 +1,10 @@
 package er.erxtest;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import com.webobjects.eoaccess.EOModelGroup;
-import com.webobjects.eocontrol.EOEditingContext;
-import com.webobjects.eocontrol.EOObjectStore;
 import com.wounit.rules.TemporaryEditingContext;
 
 import er.extensions.eof.ERXEC;
@@ -24,10 +17,9 @@ import er.extensions.foundation.ERXProperties;
  * itself is loaded once, as in an app.
  * <p>
  * WOUnit makes {@link ERXEC#newEditingContext()} return its own editing context. These
- * tests exercise {@code ERXEC} itself, so instead each one gets a new editing context
- * each time it asks, as in an app, and they're all disposed of after the test, as at the
- * end of a request. WOUnit's editing context stays unlocked during the test, since
- * nothing uses it.
+ * tests exercise {@code ERXEC} itself, so instead an {@link EditingContextTracker} hands
+ * out a new editing context each time, as in an app. WOUnit's editing context stays
+ * unlocked during the test, since nothing uses it.
  *
  * @since 0.3
  */
@@ -61,73 +53,33 @@ public abstract class EOFTestCase {
 	protected final TemporaryEditingContext temporaryEditingContext = new TemporaryEditingContext(MODEL_NAME);
 
 	/**
-	 * The editing contexts {@code ERXEC} has made during this test.
+	 * Hands out and disposes of the test's editing contexts.
 	 */
-	private final List<EOEditingContext> editingContexts = Collections.synchronizedList(new ArrayList<>());
+	private final EditingContextTracker editingContexts = new EditingContextTracker();
 
 	/**
 	 * Replaces WOUnit's {@code ERXEC} factory with one that makes a new editing context each
-	 * time and keeps track of it, and unlocks WOUnit's editing context. Left locked, that
-	 * would be unlocked by any test that ends a request, through {@code ERXEC}'s unlocker,
-	 * and WOUnit's own unlock would then fail.
+	 * time, and unlocks WOUnit's editing context. Left locked, that would be unlocked by any
+	 * test that ends a request, through {@code ERXEC}'s unlocker, and WOUnit's own unlock
+	 * would then fail.
 	 */
 	@BeforeEach
 	public void setUpEditingContexts() {
-		ERXEC.setFactory(new ERXEC.DefaultFactory() {
-			@Override
-			protected EOEditingContext _createEditingContext(EOObjectStore parent) {
-				EOEditingContext editingContext = super._createEditingContext(parent);
-				editingContexts.add(editingContext);
-				return editingContext;
-			}
-		});
+		editingContexts.install();
 		temporaryEditingContext.unlock();
 	}
 
 	/**
-	 * Disposes of the test's editing contexts, newest first, so that nested ones go before
-	 * their parents, and locks WOUnit's editing context again, for WOUnit to unlock.
-	 * <p>
-	 * The store starts again after each test, and so do its primary keys, so later tests
-	 * reuse global IDs. An editing context left for the garbage collector would release its
-	 * snapshots when it's finalized, including those that a later test's objects with the
-	 * same global IDs depend on. A test that makes an editing context some other way, and
-	 * saves through it, should dispose of it too.
+	 * Disposes of the test's editing contexts, and locks WOUnit's editing context again, for
+	 * WOUnit to unlock.
 	 */
 	@AfterEach
 	public void tearDownEditingContexts() {
 		try {
-			synchronized (editingContexts) {
-				for (int i = editingContexts.size() - 1; i >= 0; i--) {
-					dispose(editingContexts.get(i));
-				}
-			}
+			editingContexts.disposeAll();
 		}
 		finally {
 			temporaryEditingContext.lock();
-		}
-	}
-
-	/**
-	 * Disposes of an editing context, unless the test already has, or another thread has it
-	 * locked. Disposing of it twice fails, and waiting for that thread could take forever.
-	 */
-	private static void dispose(EOEditingContext editingContext) {
-		if (wasDisposed(editingContext) || !editingContext.tryLock()) {
-			return;
-		}
-		editingContext.unlock();
-		editingContext.dispose();
-	}
-
-	private static boolean wasDisposed(EOObjectStore objectStore) {
-		try {
-			Field wasDisposed = EOObjectStore.class.getDeclaredField("_wasDisposed");
-			wasDisposed.setAccessible(true);
-			return wasDisposed.getBoolean(objectStore);
-		}
-		catch (ReflectiveOperationException e) {
-			throw new IllegalStateException(e);
 		}
 	}
 
