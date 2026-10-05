@@ -67,6 +67,14 @@ Unreleased
   `ERXJDBCPlugInUtilities`, and `ERXMigration`, the base class for
   migrations kept in `.migration` SQL files. Migrations built on
   `ERXMigrationDatabase.Migration` work as before ([#23]).
+- The Joda-Time formatters (`ERXJodaDateTimeFormatter`,
+  `ERXJodaLocalDateFormatter`, `ERXJodaLocalDateTimeFormatter`,
+  `ERXJodaLocalTimeFormatter` and their `ERXJodaFormat` interface) and
+  the `java.time` ones (`ERXLocalDateFormatter`,
+  `ERXLocalDateTimeFormatter`, `ERXLocalTimeFormatter` and their
+  `ERXDateTimeFormatter` base class). `AjaxDatePicker`'s `formatter`
+  binding now takes only an `NSTimestampFormatter` or a
+  `SimpleDateFormat` ([#23]).
 
 ### Build and tests
 
