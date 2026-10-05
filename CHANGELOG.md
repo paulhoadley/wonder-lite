@@ -5,6 +5,9 @@ All notable changes to Wonder Lite are recorded here. Wonder Lite has
 its own version line (see the README), and any 0.x release may break
 compatibility with the one before it.
 
+Unreleased
+----------
+
 0.2 — 2026-10-04
 ----------------
 The first app runs on Wonder Lite. A production app has moved from
