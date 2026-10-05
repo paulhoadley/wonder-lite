@@ -25,6 +25,9 @@ Unreleased
   checker), `ERXYahooContentAnalysisService`, `ERXGMapUtilities`
   (Google's version 2 geocoder) and `ERXPageTracker` (Google Analytics'
   `ga.js`) ([#23]).
+- Support for obsolete formats and protocols: `ERXFlashMovie` (Flash),
+  `ERXGraphUtilities` (GifPlot), `ERXMacBinarySwissArmyKnife` (BinHex
+  and MacBinary) and `ERXLinlyn` (an FTP client) ([#23]).
 
 ### Build and tests
 
