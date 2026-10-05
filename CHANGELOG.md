@@ -32,6 +32,9 @@ Unreleased
   the database. They run against an in-memory H2 database, and against
   PostgreSQL in Docker through Testcontainers. Without Docker, the
   PostgreSQL tests are skipped ([#21]).
+- `tools/reachability` measures how much of wonder-lite a set of apps
+  uses: from the classes and components they name, statically, and from
+  the classes that class-load logs show them loading ([#22]).
 
 0.2 — 2026-10-04
 ----------------
@@ -185,6 +188,7 @@ starting point is Wonder's `master` branch as of 4 January 2026
 [#18]: https://github.com/paulhoadley/wonder-lite/issues/18
 [#20]: https://github.com/paulhoadley/wonder-lite/issues/20
 [#21]: https://github.com/paulhoadley/wonder-lite/issues/21
+[#22]: https://github.com/paulhoadley/wonder-lite/issues/22
 [#27]: https://github.com/paulhoadley/wonder-lite/issues/27
 [#31]: https://github.com/paulhoadley/wonder-lite/issues/31
 [#39]: https://github.com/paulhoadley/wonder-lite/issues/39
